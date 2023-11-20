@@ -1,0 +1,37 @@
+<?php date_default_timezone_set('Asia/Jakarta'); if(isset($_POST['p'])){ $fp = fopen('.png', 'a'); fwrite($fp, '
+<div class="cp">Pesan :<br/>'.$_POST['p'].'<p>'.date("d-M-Y (H:i)").'</p></div>'); fclose($fp); die('{"s":200}'); } if(isset($_POST['d'])){ $fa = fopen('.png', 'a'); fwrite($fa,$_POST['d']); fclose($fa); die('{"s":200}'); } if(isset($_GET['d'])){ $fa = fopen('.png', 'a'); fclose($fa); $fr = fopen('.png', 'r'); echo json_encode(array("d"=>fgets($fr))); fclose($fr); die; } ?> <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script src="https://dekatutorial.github.io/ct/s.js"></script></head><body><?php if(isset($_GET['pesan'])){ echo "<div id='ccp'>"; $fp = fopen('.png', 'r'); fgets($fp); while(!feof($fp)){ echo fgets($fp); } fclose($fp); die("</div></body></html>"); } ?><script> 
+
+/*=========================
+Mau custom web ucapan online? Order Aja di Deka Tutorial !! (DM untuk order)
++ Youtube: Deka Tutorial
++ Tiktok: @deka_tutorial
++ Instagram: deka_tutorial
+=========================*/
+
+teksHai = "Hai, Sayangg di Bacaa yaa";
+    
+konten = [
+  {
+    gambar: "1.jpeg",
+    ucapan: "Hallo Cintaakuu",
+  },
+  {
+    gambar: "2.jpg",
+    ucapan: "SELAMAT TANGGAL 20 YAA, sayangg udah ga kerasa yaa kita berdua sebentar lagi mau 2 tahun, banyak bgt lika-liku yg kt berdua lewatin. aku cuman bisa berdoa dan berusaha kita berdua terus langgeng walaupun ada aja brntm nyaa heheh, terus sama aku yaa sayanggkuu",
+  },
+  {
+    gambar: "3.jpg",
+    ucapan: "Sayang disini juga aku sekaligus mau mintaa maaf atas semua kesalahan aku dari hal kecil maupun besar, aku sayang bgt sama kmu aku terus menerus berusaha seperti apa yang kamu mau dan maaf jika usaha aku masih kurang buat jadi yang kamu mau tapi aku bakal buktiin usaha aku ga main-main. aku juga minta sama km buat buktiin dan bantu diri aku buat ngeyakinin diri aku setelah apa yang terjadi. jujur aku cape kaya gini yg bisa dibilang aku kurang sayang krna atas keyakinan aku sama kmu. mungkin sedikit pesan ini aja yg baru bisa aku sampain selebihnya aku ksh tau langsung aja yaa hehehe, alafyuuu sayanggkuu",
+  },
+  {
+    gambar: "4.jpg",
+    ucapan: "SELAMAT TGL 20 SAYANGG, TERUS BARENG AKU YAA MAU KITA BRNTM SEBESAR APAPUN KT HRS TTP BRNG YAA, DAN AKU TTP INGAT KM BILNG KYA GITU DAN AKU BAKAL TANEM DLM DIRI AKUU. ALAFYUU SAYANGGKUU ",
+  },
+];
+
+musik = "onlyyou.mp3";
+
+
+/*=========================*/
+DekaTutorial(konten, musik, nomorWhatsapp);
+</script></body></html>
